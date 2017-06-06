@@ -17,6 +17,10 @@ yarn add bluebird debug
 yarn add helmet loopback loopback-boot serve-favicon strong-error-handler strong-remoting
 # Extended Loopback
 yarn add loopback-connector loopback-datasource-juggler loopback-extended-lib
+# Config
+yarn add env-var lodash.merge
+# Loggers
+yarn add bunyan bunyan-debug-stream bunyan-logger express-bunyan-logger syslog-bunyan-logger
 # Lint
 yarn add --dev eslint eslint-config-wcl-backend
 # Dev
