@@ -27,13 +27,22 @@
     "helmet": "^3.6.1",
     "loopback": "^3.8.0",
     "loopback-boot": "^2.24.0",
+    "loopback-connector": "^4.2.0",
+    "loopback-datasource-juggler": "^3.9.1",
+    "loopback-extended-lib": "^0.4.1",
     "serve-favicon": "^2.4.3",
     "strong-error-handler": "^2.1.0",
     "strong-remoting": "^3.3.0"
   },
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
-    "eslint-config-wcl-backend": "^0.1.1"
+    "eslint-config-wcl-backend": "^0.1.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0",
+    "should": "^11.2.1",
+    "supertest": "^3.0.0"
   },
   "private": true,
   "license": "UNLICENSED",
