@@ -1,3 +1,18 @@
+.*
+!.gitkeep
+!.gitignore
+!.npmignore
+!.editorconfig
+!.eslintignore
+!.eslintrc
+!.travis.yml
+!.coveralls.yml
+!.istanbul.yml
+
+*.orig
+
+/backup
+
 # Logs
 logs
 *.log
@@ -17,17 +32,8 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# nyc test coverage
-.nyc_output
-
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
 # Bower dependency directory (https://bower.io/)
 bower_components
-
-# node-waf configuration
-.lock-wscript
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
@@ -39,21 +45,5 @@ jspm_packages/
 # Typescript v1 declaration files
 typings/
 
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional REPL history
-.node_repl_history
-
 # Output of 'npm pack'
 *.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variables file
-.env
-

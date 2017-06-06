@@ -1,0 +1,41 @@
+{
+  "name": "api-boilerplate",
+  "version": "0.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "author": {
+    "name": "Wiredcraft",
+    "email": "",
+    "url": ""
+  },
+  "contributors": [
+    "Makara Wang"
+  ],
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "bugs": {
+    "url": "https://github.com/Wiredcraft/api-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Wiredcraft/api-boilerplate",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "debug": "^2.6.8",
+    "helmet": "^3.6.1",
+    "loopback": "^3.8.0",
+    "loopback-boot": "^2.24.0",
+    "serve-favicon": "^2.4.3",
+    "strong-error-handler": "^2.1.0",
+    "strong-remoting": "^3.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-wcl-backend": "^0.1.1"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "API Boilerplate"
+}
