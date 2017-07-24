@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "main": "server/server.js",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "make test",
+    "test-cov": "make test-cov",
+    "test-coveralls": "make test-coveralls",
+    "start-dev": "make start-dev",
+    "start-staging": "make start-staging"
   },
   "author": {
     "name": "Wiredcraft",
