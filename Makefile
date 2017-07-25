@@ -17,7 +17,7 @@ test-coveralls: test-cov
 .PHONY: lint test test-cov test-coveralls
 
 start-dev:
-	@NODE_ENV=development $(DEBUG) $(BIN)/nodemon --config ./config/nodemon.json .
+	@NODE_ENV=development $(DEBUG) $(BIN)/nodemon --config ./configs/nodemon.json .
 start-staging:
-	@NODE_ENV=staging $(DEBUG) $(BIN)/nodemon --config ./config/nodemon.json .
+	@NODE_ENV=staging $(DEBUG) $(BIN)/nodemon --config ./configs/nodemon.json .
 .PHONY: start-dev start-staging
