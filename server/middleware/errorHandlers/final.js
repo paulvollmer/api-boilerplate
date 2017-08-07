@@ -17,10 +17,13 @@ module.exports = function(options) {
   }
   const debugging = lib.vars.debugging(options.debug);
 
-  // Always in debug mode and remove error stack in another way.
-  const handleError = strongErrorHandler(Object.assign({
-    log: false
-  }, options, {
+  /**
+   * The final handler. Not always called as the errors can be handled by another middleware (like
+   * rendered into a page). Always in debug mode and remove error stack in another way. Never log
+   * here as log is done in a previous middleware.
+   */
+  const final = strongErrorHandler(Object.assign(options, {
+    log: false,
     debug: true
   }));
 
@@ -31,6 +34,6 @@ module.exports = function(options) {
     }
 
     // The strong-error-handler.
-    return handleError(err, req, res, next);
+    return final(err, req, res, next);
   };
 };

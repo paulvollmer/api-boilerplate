@@ -1,7 +1,7 @@
 'use strict';
 
 const uuid = require('uuid');
-const logger = require('express-bunyan-logger');
+const expressLogger = require('express-bunyan-logger');
 
 const lib = require('../lib');
 
@@ -9,6 +9,7 @@ module.exports = function(options) {
   if (options == null) {
     options = {};
   }
+  const logger = lib.logger(options);
   const debugging = lib.vars.debugging(options.debug);
 
   const attr = options.attributeName || 'transactionId';
@@ -43,8 +44,8 @@ module.exports = function(options) {
   /**
    * Log request.
    */
-  const logRequest = logger({
-    logger: lib.logger(options),
+  const logRequest = expressLogger({
+    logger,
     immediate: true,
     genReqId: lib.getTransactionId,
     excludes: ['res', 'res-headers']
@@ -53,8 +54,8 @@ module.exports = function(options) {
   /**
    * Log response.
    */
-  const logResponse = logger({
-    logger: lib.logger(options),
+  const logResponse = expressLogger({
+    logger,
     immediate: false,
     genReqId: lib.getTransactionId
   });
