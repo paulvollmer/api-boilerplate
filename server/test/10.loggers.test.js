@@ -96,4 +96,20 @@ describe('The loggers', () => {
       app.logger.debug('lorem', {});
     });
   });
+
+  describe('The middleware', () => {
+    it('can output', () => {
+      return request(app)
+        .get('/api/test')
+        .set('Accept', 'application/json')
+        .expect(204);
+    });
+
+    it('can output', () => {
+      return request(app)
+        .get('/api/test/404')
+        .set('Accept', 'application/json')
+        .expect(404);
+    });
+  });
 });
