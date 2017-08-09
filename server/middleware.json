@@ -2,7 +2,9 @@
   "initial:before": {
     "loopback#favicon": {},
     "./middleware/traceLog": {
-      "stream": "${logStream}"
+      "params": {
+        "stream": "${logStream}"
+      }
     }
   },
   "initial": {
@@ -41,7 +43,9 @@
   },
   "final:after": {
     "./middleware/errorHandlers/log": {
-      "stream": "${logStream}"
+      "params": {
+        "stream": "${logStream}"
+      }
     },
     "./middleware/errorHandlers/final": {}
   }
