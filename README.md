@@ -1,4 +1,4 @@
-# API Boilerplate
+# API Boilerplate [![Build Status](https://travis-ci.org/Wiredcraft/api-boilerplate.svg?branch=master)](https://travis-ci.org/Wiredcraft/api-boilerplate)
 
 Boilerplate for a (Node.js based) API or web service.
 
