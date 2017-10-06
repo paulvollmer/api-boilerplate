@@ -18,7 +18,7 @@ test-cov: lint
 	@NODE_ENV=test $(DEBUG) $(BIN)/istanbul cover $(BIN)/_mocha -- $(MOCHA_OPTS) $(TESTS)
 test-coveralls: test-cov
 	@cat ./coverage/lcov.info | $(BIN)/coveralls --verbose
-.PHONY: lint test test-cov test-coveralls
+.PHONY: lint lint-fix test test-cov test-coveralls
 
 start:
 	@NODE_ENV=production $(DEBUG) $(BIN)/nodemon --config ${NODEMON_CONFIG} .
