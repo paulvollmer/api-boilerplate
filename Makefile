@@ -7,6 +7,9 @@ NODEMON+CONFIG = ./configs/nodemon.json
 lint:
 	@echo "Linting..."
 	@$(BIN)/eslint .
+lint-fix:
+	@echo "Linting with fix flag..."
+	@$(BIN)/eslint --fix .
 test: lint
 	@echo "Testing..."
 	@NODE_ENV=test $(DEBUG) $(BIN)/_mocha $(MOCHA_OPTS) $(TESTS)
