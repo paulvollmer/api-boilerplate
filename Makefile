@@ -26,4 +26,4 @@ start-dev:
 	@NODE_ENV=development $(DEBUG) $(BIN)/nodemon --config ${NODEMON_CONFIG} .
 start-staging:
 	@NODE_ENV=staging $(DEBUG) $(BIN)/nodemon --config ${NODEMON_CONFIG} .
-.PHONY: start-dev start-staging
+.PHONY: start start-dev start-staging
