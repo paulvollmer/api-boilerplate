@@ -14,10 +14,10 @@ module.exports = {
   namespace: 'hello:%s',
 
   // Server.
-  port: env('HELLO_PORT').asInt(),
+  port: env.get('HELLO_PORT').asInt(),
 
   // Log.
-  logStream: env('LOG_STREAM').asString(),
-  syslogHost: env('SYSLOG_HOST').asString(),
-  syslogPort: env('SYSLOG_PORT').asInt()
+  logStream: env.get('LOG_STREAM').asString(),
+  syslogHost: env.get('SYSLOG_HOST').asString(),
+  syslogPort: env.get('SYSLOG_PORT').asInt()
 };

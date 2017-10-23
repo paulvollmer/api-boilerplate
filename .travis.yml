@@ -1,3 +1,4 @@
+sudo: required
 language: node_js
 cache:
   yarn: true
@@ -12,6 +13,8 @@ addons:
 branches:
   only:
     - master
+services:
+  - docker
 env:
   global:
     - CXX=g++-4.8
@@ -20,5 +23,7 @@ env:
 node_js:
   - "8"
   - "6"
+before_script:
+  - cd ./dockers && docker-compose up -d --build && cd -
 script:
   - make test-coveralls
