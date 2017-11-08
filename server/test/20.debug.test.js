@@ -39,55 +39,9 @@ describe('The debug', () => {
     });
   });
 
-  describe('An instance with a namespace', () => {
+  describe('An instance with a default message', () => {
     it('can build a debug function', () => {
-      debug = lib.debug('namespace');
-      debug.should.be.Function();
-    });
-
-    it('can output', () => {
-      debug(new Error('lorem'));
-    });
-
-    it('can output', () => {
-      debug('lorem');
-    });
-
-    it('can output', () => {
-      debug({});
-    });
-
-    it('can output', () => {
-      debug('lorem', {});
-    });
-  });
-
-  describe('An instance with debug', () => {
-    it('can build a debug function', () => {
-      debug = lib.debug({ output: 'debug' });
-      debug.should.be.Function();
-    });
-
-    it('can output', () => {
-      debug(new Error('lorem'));
-    });
-
-    it('can output', () => {
-      debug('lorem');
-    });
-
-    it('can output', () => {
-      debug({});
-    });
-
-    it('can output', () => {
-      debug('lorem', {});
-    });
-  });
-
-  describe('An instance with a namespace and debug', () => {
-    it('can build a debug function', () => {
-      debug = lib.debug({ namespace: 'namespace', output: 'debug' });
+      debug = lib.debug('default message');
       debug.should.be.Function();
     });
 
