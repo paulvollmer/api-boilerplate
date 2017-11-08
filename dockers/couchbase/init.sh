@@ -1,18 +1,18 @@
 #!/bin/bash
+set -ev
 
-# Initialize Couchbase.
-echo "Initializing..."
+# Environment variables.
+NODE_ENV=${NODE_ENV:-development}
+COUCHBASE_USER=${COUCHBASE_USER:-Administrator}
+COUCHBASE_PASS=${COUCHBASE_PASS:-password}
 
-couchbase-cli \
+docker-compose run --rm --entrypoint=/opt/couchbase/bin/couchbase-cli couchbase \
   cluster-init -c couchbase:8091 -u Administrator -p password \
   --cluster-username=$COUCHBASE_USER --cluster-password=$COUCHBASE_PASS \
   --cluster-ramsize=512 --cluster-index-ramsize=256 --cluster-fts-ramsize=256 \
   --services=data,index,query,fts
 
-# TODO: multiple buckets.
-couchbase-cli \
+docker-compose run --rm --entrypoint=/opt/couchbase/bin/couchbase-cli couchbase \
   bucket-create -c couchbase:8091 -u $COUCHBASE_USER -p $COUCHBASE_PASS \
-  --bucket=$COUCHBASE_BUCKET --bucket-type=couchbase --bucket-port=11211 \
+  --bucket=lorem --bucket-type=couchbase --bucket-port=11211 \
   --bucket-ramsize=128 --bucket-replica=0 --enable-flush=1 --wait
-
-echo "Done."
