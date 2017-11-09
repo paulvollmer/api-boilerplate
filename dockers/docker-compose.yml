@@ -1,7 +1,7 @@
 version: '2.2'
 services:
   couchbase:
-    build: ./couchbase
+    image: 'couchbase:community-4.5.1'
     container_name: lorem_couchbase
     ports:
       - '8091-8094:8091-8094'
@@ -18,22 +18,7 @@ services:
         - '--password=password'
       interval: 5s
       timeout: 5s
-      retries: 5
-    env_file:
-      - default.env
-    networks:
-      - lorem
-  couchbase_init:
-    build: ./couchbase
-    container_name: lorem_couchbase_init
-    command: /usr/local/bin/couchbase-init.sh
-    depends_on:
-      couchbase:
-        condition: service_healthy
-    links:
-      - 'couchbase:couchbase'
-    env_file:
-      - default.env
+      retries: 10
     networks:
       - lorem
 networks:

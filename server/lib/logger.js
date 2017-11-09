@@ -1,6 +1,7 @@
 'use strict';
 
 const lib = require('./');
+const app = lib.app;
 
 /**
  * Build a logger instance.
@@ -17,5 +18,5 @@ module.exports = function(options) {
     throw new Error('bad stream name ' + options.stream);
   }
 
-  return builder(lib.vars.namespace(options.namespace || ''));
+  return builder(app.get('namespace'));
 };

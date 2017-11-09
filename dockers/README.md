@@ -8,9 +8,7 @@
 ### Up
 
 ```bash
-docker-compose up --build
-# Or
-docker-compose up -d --build
+./up.sh
 ```
 
 ### Shutdown and cleanup

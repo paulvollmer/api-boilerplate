@@ -1,6 +1,5 @@
 'use strict';
 
-const path = require('path');
 const env = require('env-var');
 
 /**
@@ -11,7 +10,7 @@ const env = require('env-var');
  */
 module.exports = {
   // Project.
-  namespace: 'hello:%s',
+  namespace: 'hello',
 
   // Server.
   port: env.get('HELLO_PORT').asInt(),
