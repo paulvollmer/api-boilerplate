@@ -26,23 +26,65 @@ describe('The loggers', () => {
     it('can build a logger', () => {
       logger = lib.logger('debug');
       logger.should.be.Object();
-      logger.should.have.property('debug').which.is.Function();
+      logger.should.have.property('info').which.is.Function();
     });
 
     it('can output', () => {
-      logger.debug(new Error('lorem'));
+      logger.info(new Error('lorem'));
     });
 
     it('can output', () => {
-      logger.debug('lorem');
+      logger.info('lorem');
     });
 
     it('can output', () => {
-      logger.debug({});
+      logger.info({});
     });
 
     it('can output', () => {
-      logger.debug('lorem', {});
+      logger.info('lorem', {});
+    });
+  });
+
+  describe('The ringbuffer', () => {
+    let ringbuffer;
+
+    beforeEach(() => {
+      if (ringbuffer) {
+        ringbuffer.records = [];
+      }
+    });
+
+    it('should be there', () => {
+      lib.loggers.should.have.property('ringbuffer').which.is.Function();
+    });
+
+    it('can build a logger', () => {
+      logger = lib.logger('ringbuffer');
+      logger.should.be.Object();
+      logger.should.have.property('info').which.is.Function();
+      logger.should.have.property('streams').which.is.Array().with.length(1);
+      ringbuffer = logger.streams[0].stream;
+    });
+
+    it('can output', () => {
+      logger.info(new Error('lorem'));
+      ringbuffer.records.should.be.Array().with.length(1);
+    });
+
+    it('can output', () => {
+      logger.info('lorem');
+      ringbuffer.records.should.be.Array().with.length(1);
+    });
+
+    it('can output', () => {
+      logger.info({});
+      ringbuffer.records.should.be.Array().with.length(1);
+    });
+
+    it('can output', () => {
+      logger.info('lorem', {});
+      ringbuffer.records.should.be.Array().with.length(1);
     });
   });
 
@@ -54,46 +96,46 @@ describe('The loggers', () => {
     it('can build a logger', () => {
       logger = lib.logger('syslog');
       logger.should.be.Object();
-      logger.should.have.property('debug').which.is.Function();
+      logger.should.have.property('info').which.is.Function();
     });
 
     it('can output', () => {
-      logger.debug(new Error('lorem'));
+      logger.info(new Error('lorem'));
     });
 
     it('can output', () => {
-      logger.debug('lorem');
+      logger.info('lorem');
     });
 
     it('can output', () => {
-      logger.debug({});
+      logger.info({});
     });
 
     it('can output', () => {
-      logger.debug('lorem', {});
+      logger.info('lorem', {});
     });
   });
 
   describe('The global logger', () => {
     it('should be there', () => {
       app.should.have.property('logger').which.is.Object();
-      app.logger.should.have.property('debug').which.is.Function();
+      app.logger.should.have.property('info').which.is.Function();
     });
 
     it('can output', () => {
-      app.logger.debug(new Error('lorem'));
+      app.logger.info(new Error('lorem'));
     });
 
     it('can output', () => {
-      app.logger.debug('lorem');
+      app.logger.info('lorem');
     });
 
     it('can output', () => {
-      app.logger.debug({});
+      app.logger.info({});
     });
 
     it('can output', () => {
-      app.logger.debug('lorem', {});
+      app.logger.info('lorem', {});
     });
   });
 
