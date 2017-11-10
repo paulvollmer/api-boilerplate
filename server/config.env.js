@@ -9,9 +9,6 @@ const env = require('env-var');
  * place for default configs, but the `config.json` and the env-specific config files are.
  */
 module.exports = {
-  // Project.
-  namespace: 'hello',
-
   // Server.
   port: env.get('HELLO_PORT').asInt(),
 

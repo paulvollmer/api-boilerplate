@@ -19,7 +19,7 @@ module.exports = function(options) {
   }
 
   // Will only be used when the `app` is not booted.
-  const toConsole = debug(app.get('namespace'));
+  const toConsole = debug(lib.constants.namespace);
 
   return function() {
     const args = sliced(arguments);
