@@ -4,9 +4,13 @@ TESTS = server/test/*.test.js
 MOCHA_OPTS = -b --timeout 10000 --reporter spec
 NODEMON_CONFIG = ./configs/nodemon.json
 
-lint:
-	@echo "Linting..."
+lint: lint-js lint-json
+lint-js:
+	@echo "Linting JavaScript..."
 	@$(BIN)/eslint .
+lint-json:
+	@echo "Linting JSON..."
+	@$(BIN)/jsonlint -q package.json ./**/*.json
 lint-fix:
 	@echo "Linting with fix flag..."
 	@$(BIN)/eslint --fix .
