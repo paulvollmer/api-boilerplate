@@ -53,6 +53,7 @@
     "eslint-config-wcl-backend": "^0.1.1",
     "istanbul": "^0.4.5",
     "jsonlint": "paulvollmer/jsonlint#v1.8.2",
+    "loopback-component-explorer": "^5.2.0",
     "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
     "should": "^13.1.3",
