@@ -16,10 +16,10 @@ lint-fix:
 	@$(BIN)/eslint --fix .
 test: lint
 	@echo "Testing..."
-	@NODE_ENV=test $(DEBUG) $(BIN)/_mocha $(MOCHA_OPTS) $(TESTS)
+	@NODE_ENV=test $(DEBUG) $(BIN)/_mocha $(MOCHA_OPTS) $(TESTS) --exit
 test-cov: lint
 	@echo "Testing..."
-	@NODE_ENV=test $(DEBUG) $(BIN)/istanbul cover $(BIN)/_mocha -- $(MOCHA_OPTS) $(TESTS)
+	@NODE_ENV=test $(DEBUG) $(BIN)/istanbul cover $(BIN)/_mocha -- $(MOCHA_OPTS) $(TESTS) --exit
 test-coveralls: test-cov
 	@cat ./coverage/lcov.info | $(BIN)/coveralls --verbose
 .PHONY: lint lint-fix test test-cov test-coveralls
