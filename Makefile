@@ -1,7 +1,7 @@
 DEBUG = DEBUG=lorem,lorem:*
 BIN = ./node_modules/.bin
 TESTS = server/test/*.test.js
-MOCHA_OPTS = -b --timeout 10000 --reporter spec
+MOCHA_OPTS = -b --timeout 10000 --reporter spec --exit
 NODEMON_CONFIG = ./configs/nodemon.json
 
 lint: lint-js lint-json
